@@ -1,7 +1,7 @@
 // Importing the Express router module
 const router = require("express").Router();
 // Importing the Movie model for database operations
-const List = require("../models/Lists");
+const List = require("../models/List");
 // Importing the verifyToken middleware for authentication
 const verify = require("../verifyToken");
 
@@ -37,7 +37,7 @@ router.delete("/:id", verify, async (req, res) => {
 
 
   // Get endpoints for handling Get requests
-router.get("/:id", verify, async (req, res) => {
+router.get("/", verify, async (req, res) => {
   const typeQuery = req.query.type;
   const genreQuery = req.query.genre;
   let list = [];
